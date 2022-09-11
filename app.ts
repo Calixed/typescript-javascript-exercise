@@ -1,6 +1,13 @@
-const combine = (input1: number | string,
-    input2: number | string,
-    resultConversion: 'as-number' | 'as-text' // adding union type for only this two values
+// Scenario: it is tiring to type 'number | string' everytime you have a new parameter
+// solution: you can create an custom type alias
+
+type Combinable = number | string; // kinda same as c++ using it as alias
+// you can also used for literal types or any types at all
+type ConversionDescriptor = 'as-number' | 'as-text'; // to avoid typos
+const combine = (
+    input1: Combinable,
+    input2: Combinable,
+    resultConversion: ConversionDescriptor // adding union type for only this two values
     // any other type will not be allowed
     ) => {
 
@@ -32,5 +39,4 @@ console.log(literalResult);
 
 
 const combinedResult = combine('Max', 'Anna', 'as-text');
-
 console.log(combinedResult);
