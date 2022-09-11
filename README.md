@@ -1,6 +1,6 @@
 # typescript-javascript-exercise
 Documenting my journey in learning typescript
-- learning the basics of typescript 
+- learning the basic of typescript 
 - typescript compiler
 - next generation of javascript and typescript 
 - classes & interface 
