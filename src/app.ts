@@ -1,19 +1,23 @@
 // declaring a class
 class Department{
     // this is how you declare a attribute
-    public name: string;
+    //private name: string;
 
     // adding access modifiers
     private employees: string[] =[];
 
     // constructor using a this keyword to refer the local variable
-    constructor(fname: string){
-        this.name = fname;
+    // using short hands for initialzing
+    constructor(private id: string, private name: string){ // initializing a variable inside of the parameter in the constructor
+        this.id = id;
+        this.name = name;
     }
 
     // class method
     describe(this: Department){
-        console.log('Department: ' + this.name)
+        //console.log('Department: ' + this.name)
+        // formatted way of printing
+        console.log(`Department: ${this.name} ID: ${this.id}`)
     }
 
     addEmployee(employee:string){
@@ -27,7 +31,7 @@ class Department{
 }
 
 // this is how you create an object
-const accountLog = new Department('IT department');
+const accountLog = new Department('d1','IT department');
 
 accountLog.addEmployee('John');
 accountLog.addEmployee('Doe');
@@ -39,9 +43,10 @@ accountLog.addEmployee('Doe');
 
 accountLog.describe();
 
-// this how you populate a class in ts/js
+// this another way* how you populate a class in ts/js
 const accountCopy = {
     name: "Account Copy",
     describe: accountLog.describe
 };
-accountCopy.describe();
+
+// accountCopy.describe();
